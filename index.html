@@ -1,130 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaspianRP - Roblox Role Play Game</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CaspianRP Logo</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #0a0f1f 0%, #000 80%);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* کانتینر لوگو */
+.logo-container {
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* متن عمودی */
+.logo {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 10px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: #00f7ff;
+    text-shadow:
+        0 0 10px #00f7ff,
+        0 0 20px #00e1ff,
+        0 0 40px #00c3ff,
+        0 0 80px #0099ff;
+    position: relative;
+}
+
+/* افکت نور عبوری */
+.logo::after {
+    content: "CaspianRP";
+    position: absolute;
+    left: 0;
+    top: 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: white;
+    opacity: 0.8;
+    filter: blur(8px);
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255,255,255,0.9) 50%,
+        transparent 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+/* حرکت شناور */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* نور عبوری */
+@keyframes shine {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* ذرات نور */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,255,0.05) 10%, transparent 10%);
+    background-size: 50px 50px;
+    animation: moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px,-200px); }
+}
+</style>
+
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">🎮 CaspianRP</div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#community" class="nav-link">Community</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">Welcome to CaspianRP</h1>
-            <p class="hero-subtitle">Experience the ultimate Roblox role playing adventure. Create your character, explore an amazing world, and make unforgettable memories</p>
-            <a href="#" class="btn btn-primary btn-large">Join the Adventure</a>
-            <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
-        </div>
-        <div class="hero-background"></div>
-    </section>
+<div class="logo-container">
+    <div class="logo">CaspianRP</div>
+</div>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2 class="section-title">Why You'll Love CaspianRP</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3>Expansive World</h3>
-                <p>Explore multiple dimensions, cities, and hidden locations packed with secrets and adventures.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👤</div>
-                <h3>Character Creation</h3>
-                <p>Customize your character with thousands of combinations. Express yourself in unlimited ways.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Engaging Missions</h3>
-                <p>Complete challenging quests, earn rewards, and unlock exclusive items and abilities.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Social Hub</h3>
-                <p>Team up with friends, join guilds, and participate in epic community events.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💎</div>
-                <h3>Rare Items</h3>
-                <p>Collect limited edition items, cosmetics, and weapons throughout your journey.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏆</div>
-                <h3>Competitive</h3>
-                <p>Battle other players, climb the leaderboards, and become a legend in the community.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Section -->
-    <section class="community" id="community">
-        <h2 class="section-title">Join Our Community</h2>
-        <div class="community-content">
-            <div class="community-stats">
-                <div class="stat">
-                    <h3>50K+</h3>
-                    <p>Active Players</p>
-                </div>
-                <div class="stat">
-                    <h3>1M+</h3>
-                    <p>Hours Played</p>
-                </div>
-                <div class="stat">
-                    <h3>100+</h3>
-                    <p>Daily Events</p>
-                </div>
-            </div>
-            <div class="community-message">
-                <h3>Be Part of Something Amazing</h3>
-                <p>Our community is welcoming, friendly, and always growing. Whether you're a casual player or a hardcore gamer, there's a place for you here in CaspianRP.</p>
-                <button class="btn btn-primary" onclick="scrollToContact()">Get Involved</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 class="section-title">Get in Touch</h2>
-        <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-        </form>
-        <p class="form-response" id="formResponse"></p>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 CaspianRP. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">Discord</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">YouTube</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
