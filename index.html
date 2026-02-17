@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CaspianRP Neon Pro</title>
+<title>CaspianRP Classic Neon</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap');
 
 body{
     margin:0;
@@ -14,84 +14,54 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background: radial-gradient(circle at center, #140018 0%, #000000 70%);
+    background: radial-gradient(circle at center, #120016 0%, #000000 80%);
     overflow:hidden;
-    font-family:'Orbitron', sans-serif;
+    font-family:'Cinzel', serif;
 }
 
-/* کانتینر */
 .logo{
-    position:relative;
     font-size:6rem;
     font-weight:900;
-    letter-spacing:12px;
+    letter-spacing:10px;
     display:inline-block;
 }
 
-/* هر حرف */
 .logo span{
     display:inline-block;
-    background: linear-gradient(180deg,#ff00cc,#a100ff,#ff66ff);
+    position:relative;
+    background: linear-gradient(90deg,#ff00cc,#b300ff,#ff66ff);
+    background-size:200% 100%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+    animation:
+        wave 3s ease-in-out infinite,
+        lightMove 4s linear infinite;
     text-shadow:
-        0 0 10px #ff00cc,
-        0 0 20px #a100ff,
-        0 0 40px #ff00cc,
-        0 0 80px #a100ff;
-    animation: float 3s ease-in-out infinite;
+        0 0 8px rgba(255,0,200,0.6),
+        0 0 20px rgba(179,0,255,0.6);
 }
 
-/* تأخیر موجی */
-.logo span:nth-child(1){animation-delay:0s;}
-.logo span:nth-child(2){animation-delay:.15s;}
-.logo span:nth-child(3){animation-delay:.3s;}
-.logo span:nth-child(4){animation-delay:.45s;}
-.logo span:nth-child(5){animation-delay:.6s;}
-.logo span:nth-child(6){animation-delay:.75s;}
-.logo span:nth-child(7){animation-delay:.9s;}
-.logo span:nth-child(8){animation-delay:1.05s;}
-.logo span:nth-child(9){animation-delay:1.2s;}
+/* تاخیر موجی برای هر حرف */
+.logo span:nth-child(1){animation-delay:0s,0s;}
+.logo span:nth-child(2){animation-delay:.15s,.15s;}
+.logo span:nth-child(3){animation-delay:.3s,.3s;}
+.logo span:nth-child(4){animation-delay:.45s,.45s;}
+.logo span:nth-child(5){animation-delay:.6s,.6s;}
+.logo span:nth-child(6){animation-delay:.75s,.75s;}
+.logo span:nth-child(7){animation-delay:.9s,.9s;}
+.logo span:nth-child(8){animation-delay:1.05s,1.05s;}
+.logo span:nth-child(9){animation-delay:1.2s,1.2s;}
 
-/* حرکت موجی */
-@keyframes float{
+/* حرکت موج نرم */
+@keyframes wave{
     0%,100%{transform:translateY(0px);}
-    50%{transform:translateY(-25px);}
+    50%{transform:translateY(-18px);}
 }
 
-/* افکت نور عبوری حرفه‌ای */
-.logo::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-150%;
-    width:120%;
-    height:100%;
-    background:linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255,255,255,0.9) 45%,
-        rgba(255,0,255,0.8) 50%,
-        rgba(255,255,255,0.9) 55%,
-        transparent 100%
-    );
-    transform:skewX(-25deg);
-    animation:shine 3s linear infinite;
-}
-
-@keyframes shine{
-    0%{left:-150%;}
-    100%{left:200%;}
-}
-
-/* هاله نور پشت لوگو */
-.logo::before{
-    content:"";
-    position:absolute;
-    inset:-40px;
-    background:radial-gradient(circle, rgba(255,0,200,0.25), transparent 70%);
-    filter:blur(60px);
-    z-index:-1;
+/* نور دقیق داخل تکست */
+@keyframes lightMove{
+    0%{background-position:-200% 0;}
+    100%{background-position:200% 0;}
 }
 </style>
 </head>
