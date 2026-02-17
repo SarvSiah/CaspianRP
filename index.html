@@ -3,51 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Role Play Game</title>
+    <title>CaspianRP - Roblox Role Play Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
-        <h1>Welcome to Our Roblox Role Play Game</h1>
-        <p>Join the adventure, create your story!</p>
-        <a href="#features" class="btn">Explore Features</a>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎮 CaspianRP</div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#community" class="nav-link">Community</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
 
-    <section id="features" class="features-showcase">
-        <h2>Game Features</h2>
-        <ul>
-            <li>Immersive Role Play Experiences</li>
-            <li>Customizable Avatars</li>
-            <li>Dynamic Quests and Storylines</li>
-            <li>Community Events and Competitions</li>
-        </ul>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to CaspianRP</h1>
+            <p class="hero-subtitle">Experience the ultimate Roblox role playing adventure. Create your character, explore an amazing world, and make unforgettable memories</p>
+            <a href="#" class="btn btn-primary btn-large">Join the Adventure</a>
+            <a href="#features" class="btn btn-secondary btn-large">Learn More</a>
+        </div>
+        <div class="hero-background"></div>
     </section>
 
-    <section class="community-stats">
-        <h2>Community Statistics</h2>
-        <p>Players Online: <span id="online-players">500</span></p>
-        <p>Total Players: <span id="total-players">5000</span></p>
-        <p>Active Guilds: <span id="active-guilds">150</span></p>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Why You'll Love CaspianRP</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Expansive World</h3>
+                <p>Explore multiple dimensions, cities, and hidden locations packed with secrets and adventures.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👤</div>
+                <h3>Character Creation</h3>
+                <p>Customize your character with thousands of combinations. Express yourself in unlimited ways.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Engaging Missions</h3>
+                <p>Complete challenging quests, earn rewards, and unlock exclusive items and abilities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Social Hub</h3>
+                <p>Team up with friends, join guilds, and participate in epic community events.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Rare Items</h3>
+                <p>Collect limited edition items, cosmetics, and weapons throughout your journey.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Competitive</h3>
+                <p>Battle other players, climb the leaderboards, and become a legend in the community.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="#" method="post">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <h2 class="section-title">Join Our Community</h2>
+        <div class="community-content">
+            <div class="community-stats">
+                <div class="stat">
+                    <h3>50K+</h3>
+                    <p>Active Players</p>
+                </div>
+                <div class="stat">
+                    <h3>1M+</h3>
+                    <p>Hours Played</p>
+                </div>
+                <div class="stat">
+                    <h3>100+</h3>
+                    <p>Daily Events</p>
+                </div>
+            </div>
+            <div class="community-message">
+                <h3>Be Part of Something Amazing</h3>
+                <p>Our community is welcoming, friendly, and always growing. Whether you're a casual player or a hardcore gamer, there's a place for you here in CaspianRP.</p>
+                <button class="btn btn-primary" onclick="scrollToContact()">Get Involved</button>
+            </div>
+        </div>
+    </section>
 
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send Message</button>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary btn-large">Send Message</button>
         </form>
+        <p class="form-response" id="formResponse"></p>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Roblox Role Play Game. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 CaspianRP. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Discord</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">YouTube</a>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
