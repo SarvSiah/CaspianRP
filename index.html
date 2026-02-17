@@ -1,84 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CaspianRP Classic Neon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CaspianRP | Roblox Roleplay Server</title>
+  <meta
+    name="description"
+    content="CaspianRP is a Roblox roleplay world with immersive city life, factions, jobs, and player-driven stories."
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Inter:wght@400;600;700;800&display=swap');
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap');
+    :root {
+      --bg: #070a14;
+      --bg-soft: #10162b;
+      --panel: rgba(14, 20, 39, 0.74);
+      --border: rgba(255, 255, 255, 0.13);
+      --text: #eef2ff;
+      --muted: #a7b1d6;
+      --cyan: #22d3ee;
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --green: #34d399;
+      --shadow: 0 14px 38px rgba(0, 0, 0, 0.45);
+      --glow: 0 0 20px rgba(139, 92, 246, 0.35);
+    }
 
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: radial-gradient(circle at center, #120016 0%, #000000 80%);
-    overflow:hidden;
-    font-family:'Cinzel', serif;
-}
+    * { box-sizing: border-box; }
 
-.logo{
-    font-size:6rem;
-    font-weight:900;
-    letter-spacing:10px;
-    display:inline-block;
-}
+    html { scroll-behavior: smooth; }
 
-.logo span{
-    display:inline-block;
-    position:relative;
-    background: linear-gradient(90deg,#ff00cc,#b300ff,#ff66ff);
-    background-size:200% 100%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:
-        wave 3s ease-in-out infinite,
-        lightMove 4s linear infinite;
-    text-shadow:
-        0 0 8px rgba(255,0,200,0.6),
-        0 0 20px rgba(179,0,255,0.6);
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 14%, #352069 0%, transparent 34%),
+        radial-gradient(circle at 83% 8%, #0f4669 0%, transparent 30%),
+        radial-gradient(circle at 50% 100%, #3f1739 0%, transparent 40%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-/* تاخیر موجی برای هر حرف */
-.logo span:nth-child(1){animation-delay:0s,0s;}
-.logo span:nth-child(2){animation-delay:.15s,.15s;}
-.logo span:nth-child(3){animation-delay:.3s,.3s;}
-.logo span:nth-child(4){animation-delay:.45s,.45s;}
-.logo span:nth-child(5){animation-delay:.6s,.6s;}
-.logo span:nth-child(6){animation-delay:.75s,.75s;}
-.logo span:nth-child(7){animation-delay:.9s,.9s;}
-.logo span:nth-child(8){animation-delay:1.05s,1.05s;}
-.logo span:nth-child(9){animation-delay:1.2s,1.2s;}
+    .stars,
+    .stars::before,
+    .stars::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(1.3px 1.3px at 10% 20%, rgba(255,255,255,.7) 45%, transparent 55%),
+        radial-gradient(1.8px 1.8px at 80% 15%, rgba(34,211,238,.8) 45%, transparent 55%),
+        radial-gradient(1.5px 1.5px at 70% 70%, rgba(236,72,153,.7) 45%, transparent 55%),
+        radial-gradient(1.2px 1.2px at 35% 80%, rgba(139,92,246,.7) 45%, transparent 55%);
+      animation: floatStars 24s linear infinite;
+    }
 
-/* حرکت موج نرم */
-@keyframes wave{
-    0%,100%{transform:translateY(0px);}
-    50%{transform:translateY(-18px);}
-}
+    .stars::before { opacity: 0.45; animation-duration: 32s; }
+    .stars::after { opacity: 0.28; animation-duration: 42s; }
 
-/* نور دقیق داخل تکست */
-@keyframes lightMove{
-    0%{background-position:-200% 0;}
-    100%{background-position:200% 0;}
-}
-</style>
+    @keyframes floatStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-60px); }
+    }
+
+    .container {
+      width: min(1140px, 92vw);
+      margin: 0 auto;
+      padding: 1.2rem 0 3rem;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow), var(--glow);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 1rem;
+      z-index: 8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .logo {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    .logo span { color: var(--cyan); text-shadow: 0 0 14px rgba(34,211,238,.6); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #dbe4ff;
+      text-decoration: none;
+      font-size: 0.86rem;
+      opacity: 0.85;
+    }
+
+    .nav a:hover { opacity: 1; }
+
+    .status {
+      border: 1px solid rgba(52, 211, 153, .5);
+      color: #cbfff1;
+      background: rgba(52, 211, 153, .14);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .kicker {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #c4b5fd;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.04;
+      letter-spacing: 0.015em;
+      text-shadow: 0 0 22px rgba(139, 92, 246, .45);
+      max-width: 17ch;
+    }
+
+    .highlight { color: var(--cyan); }
+
+    .lead {
+      color: var(--muted);
+      max-width: 64ch;
+      line-height: 1.65;
+      margin: 1rem 0 1.3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 0.72rem 1rem;
+      font-size: 0.9rem;
+      transition: transform .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #071324;
+      background: linear-gradient(90deg, var(--cyan), #9cf7ff);
+      box-shadow: 0 0 16px rgba(34,211,238,.38);
+    }
+
+    .btn-secondary {
+      color: #ffe8ff;
+      border: 1px solid rgba(236,72,153,.45);
+      background: rgba(236,72,153,.18);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .stat {
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 12px;
+      background: rgba(255,255,255,.03);
+      padding: 0.75rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .stat span { color: var(--muted); font-size: 0.82rem; }
+
+    .feature-grid {
+      display: grid;
+      gap: 0.95rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0.95rem 0;
+    }
+
+    .card {
+      padding: 1rem;
+      border-radius: 16px;
+      background: rgba(10, 16, 33, 0.7);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+    }
+
+    .card p,
+    .roadmap li,
+    .updates li { color: var(--muted); }
+
+    .lower-grid {
+      display: grid;
+      gap: 0.95rem;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .roadmap ul,
+    .updates ul {
+      margin: 0.6rem 0 0;
+      padding-left: 1rem;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 1rem;
+      padding: 0.9rem;
+      text-align: center;
+      color: #9aa4cb;
+      font-size: 0.83rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-stats,
+      .feature-grid,
+      .lower-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar { position: static; }
+      .hero { padding: 1.35rem; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="stars" aria-hidden="true"></div>
 
-<div class="logo">
-    <span>C</span>
-    <span>a</span>
-    <span>s</span>
-    <span>p</span>
-    <span>i</span>
-    <span>a</span>
-    <span>n</span>
-    <span>R</span>
-    <span>P</span>
-</div>
+  <main class="container">
+    <header class="topbar glass">
+      <h2 class="logo">Caspian<span>RP</span></h2>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#community">Community</a>
+        <span class="status">ALPHA BUILDING</span>
+      </nav>
+    </header>
 
+    <section class="hero glass" id="about">
+      <span class="kicker">Official Roblox Roleplay Project</span>
+      <h1>A city of <span class="highlight">choices</span>, consequences, and unforgettable roleplay.</h1>
+      <p class="lead">
+        CaspianRP is built for players who want serious roleplay with cinematic style.
+        Build a legal empire, join emergency services, run the streets, or create your own story arc with friends.
+      </p>
+
+      <div class="hero-actions" id="community">
+        <a class="btn btn-primary" href="https://www.roblox.com/" target="_blank" rel="noopener noreferrer">Play on Roblox</a>
+        <a class="btn btn-secondary" href="https://discord.gg/" target="_blank" rel="noopener noreferrer">Join Discord</a>
+      </div>
+
+      <div class="hero-stats" aria-label="Project highlights">
+        <div class="stat"><strong>40+</strong><span>Planned custom systems</span></div>
+        <div class="stat"><strong>24/7</strong><span>Persistent city vision</span></div>
+        <div class="stat"><strong>100%</strong><span>Player-driven story focus</span></div>
+      </div>
+    </section>
+
+    <section class="feature-grid" id="features" aria-label="Core roleplay features">
+      <article class="card glass">
+        <h3>Jobs & Economy</h3>
+        <p>Choose your profession, build wealth, and influence the city economy with every decision you make.</p>
+      </article>
+      <article class="card glass">
+        <h3>Factions & Territories</h3>
+        <p>Create or join factions with identity, uniforms, influence, and long-term progression.</p>
+      </article>
+      <article class="card glass">
+        <h3>Events & Story Arcs</h3>
+        <p>Weekly scenarios, city-wide incidents, and staff-supported narratives that reward quality roleplay.</p>
+      </article>
+    </section>
+
+    <section class="lower-grid" id="roadmap">
+      <article class="card glass roadmap">
+        <h2>Development Roadmap</h2>
+        <ul>
+          <li>Phase 1 — Core character systems, inventory, and in-city jobs.</li>
+          <li>Phase 2 — Police, EMS, criminal mechanics, and court framework.</li>
+          <li>Phase 3 — Factions, housing, seasonal events, and economy balancing.</li>
+        </ul>
+      </article>
+      <article class="card glass updates">
+        <h2>Latest Updates</h2>
+        <ul>
+          <li>Website redesign for GitHub Pages launch.</li>
+          <li>Branding update: CaspianRP neon city direction.</li>
+          <li>Community channels opening soon.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer glass">CaspianRP © 2026 • Built for GitHub Pages</footer>
+  </main>
 </body>
 </html>
