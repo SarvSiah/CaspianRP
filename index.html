@@ -7,24 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Roblox Role Play Game!</h1>
+    <header class="hero">
+        <h1>Welcome to Our Roblox Role Play Game</h1>
+        <p>Join the adventure, create your story!</p>
+        <a href="#features" class="btn">Explore Features</a>
     </header>
-    <main>
-        <section>
-            <h2>Game Features</h2>
-            <ul>
-                <li>Interactive Storylines</li>
-                <li>Customizable Characters</li>
-                <li>Multiplayer Adventures</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Join Us Now!</h2>
-            <p>Experience the thrill of role playing in a vibrant world!</p>
-            <a href="join.html">Join the Game</a>
-        </section>
-    </main>
+
+    <section id="features" class="features-showcase">
+        <h2>Game Features</h2>
+        <ul>
+            <li>Immersive Role Play Experiences</li>
+            <li>Customizable Avatars</li>
+            <li>Dynamic Quests and Storylines</li>
+            <li>Community Events and Competitions</li>
+        </ul>
+    </section>
+
+    <section class="community-stats">
+        <h2>Community Statistics</h2>
+        <p>Players Online: <span id="online-players">500</span></p>
+        <p>Total Players: <span id="total-players">5000</span></p>
+        <p>Active Guilds: <span id="active-guilds">150</span></p>
+    </section>
+
+    <section id="contact" class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2026 Roblox Role Play Game. All rights reserved.</p>
     </footer>
