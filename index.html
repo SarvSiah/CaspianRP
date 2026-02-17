@@ -1,84 +1,377 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CaspianRP Classic Neon</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap');
-
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: radial-gradient(circle at center, #120016 0%, #000000 80%);
-    overflow:hidden;
-    font-family:'Cinzel', serif;
-}
-
-.logo{
-    font-size:6rem;
-    font-weight:900;
-    letter-spacing:10px;
-    display:inline-block;
-}
-
-.logo span{
-    display:inline-block;
-    position:relative;
-    background: linear-gradient(90deg,#ff00cc,#b300ff,#ff66ff);
-    background-size:200% 100%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:
-        wave 3s ease-in-out infinite,
-        lightMove 4s linear infinite;
-    text-shadow:
-        0 0 8px rgba(255,0,200,0.6),
-        0 0 20px rgba(179,0,255,0.6);
-}
-
-/* تاخیر موجی برای هر حرف */
-.logo span:nth-child(1){animation-delay:0s,0s;}
-.logo span:nth-child(2){animation-delay:.15s,.15s;}
-.logo span:nth-child(3){animation-delay:.3s,.3s;}
-.logo span:nth-child(4){animation-delay:.45s,.45s;}
-.logo span:nth-child(5){animation-delay:.6s,.6s;}
-.logo span:nth-child(6){animation-delay:.75s,.75s;}
-.logo span:nth-child(7){animation-delay:.9s,.9s;}
-.logo span:nth-child(8){animation-delay:1.05s,1.05s;}
-.logo span:nth-child(9){animation-delay:1.2s,1.2s;}
-
-/* حرکت موج نرم */
-@keyframes wave{
-    0%,100%{transform:translateY(0px);}
-    50%{transform:translateY(-18px);}
-}
-
-/* نور دقیق داخل تکست */
-@keyframes lightMove{
-    0%{background-position:-200% 0;}
-    100%{background-position:200% 0;}
-}
-</style>
-</head>
-
-<body>
-
-<div class="logo">
-    <span>C</span>
-    <span>a</span>
-    <span>s</span>
-    <span>p</span>
-    <span>i</span>
-    <span>a</span>
-    <span>n</span>
-    <span>R</span>
-    <span>P</span>
-</div>
-
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index ab71279adc6c5371e43405106973b4f064673b54..103d47440666c773b77e786a591dacb4bdc4664e 100644
+--- a/index.html
++++ b/index.html
+@@ -1,84 +1,293 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+-<meta charset="UTF-8">
+-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-<title>CaspianRP Classic Neon</title>
+-
+-<style>
+-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap');
+-
+-body{
+-    margin:0;
+-    height:100vh;
+-    display:flex;
+-    justify-content:center;
+-    align-items:center;
+-    background: radial-gradient(circle at center, #120016 0%, #000000 80%);
+-    overflow:hidden;
+-    font-family:'Cinzel', serif;
+-}
+-
+-.logo{
+-    font-size:6rem;
+-    font-weight:900;
+-    letter-spacing:10px;
+-    display:inline-block;
+-}
+-
+-.logo span{
+-    display:inline-block;
+-    position:relative;
+-    background: linear-gradient(90deg,#ff00cc,#b300ff,#ff66ff);
+-    background-size:200% 100%;
+-    -webkit-background-clip:text;
+-    -webkit-text-fill-color:transparent;
+-    animation:
+-        wave 3s ease-in-out infinite,
+-        lightMove 4s linear infinite;
+-    text-shadow:
+-        0 0 8px rgba(255,0,200,0.6),
+-        0 0 20px rgba(179,0,255,0.6);
+-}
+-
+-/* تاخیر موجی برای هر حرف */
+-.logo span:nth-child(1){animation-delay:0s,0s;}
+-.logo span:nth-child(2){animation-delay:.15s,.15s;}
+-.logo span:nth-child(3){animation-delay:.3s,.3s;}
+-.logo span:nth-child(4){animation-delay:.45s,.45s;}
+-.logo span:nth-child(5){animation-delay:.6s,.6s;}
+-.logo span:nth-child(6){animation-delay:.75s,.75s;}
+-.logo span:nth-child(7){animation-delay:.9s,.9s;}
+-.logo span:nth-child(8){animation-delay:1.05s,1.05s;}
+-.logo span:nth-child(9){animation-delay:1.2s,1.2s;}
+-
+-/* حرکت موج نرم */
+-@keyframes wave{
+-    0%,100%{transform:translateY(0px);}
+-    50%{transform:translateY(-18px);}
+-}
+-
+-/* نور دقیق داخل تکست */
+-@keyframes lightMove{
+-    0%{background-position:-200% 0;}
+-    100%{background-position:200% 0;}
+-}
+-</style>
+-</head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>CaspianRP | Roblox Roleplay Universe</title>
++  <meta name="description" content="Official GitHub Pages site for CaspianRP — a cinematic Roblox roleplay experience." />
++  <style>
++    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&display=swap');
++
++    :root {
++      --bg: #070811;
++      --panel: rgba(14, 19, 34, 0.72);
++      --panel-border: rgba(139, 92, 246, 0.35);
++      --text: #ebedff;
++      --muted: #9ea7d8;
++      --violet: #8b5cf6;
++      --cyan: #22d3ee;
++      --pink: #ec4899;
++      --success: #34d399;
++      --glow: 0 0 24px rgba(139, 92, 246, 0.35);
++    }
++
++    * { box-sizing: border-box; }
++
++    body {
++      margin: 0;
++      min-height: 100vh;
++      color: var(--text);
++      font-family: 'Inter', system-ui, -apple-system, sans-serif;
++      background:
++        radial-gradient(circle at 15% 10%, #2a195f 0%, transparent 32%),
++        radial-gradient(circle at 85% 20%, #0c4060 0%, transparent 28%),
++        radial-gradient(circle at 50% 100%, #2f103d 0%, transparent 35%),
++        var(--bg);
++      overflow-x: hidden;
++    }
++
++    .stars,
++    .stars::before,
++    .stars::after {
++      content: "";
++      position: fixed;
++      inset: 0;
++      pointer-events: none;
++      background-image:
++        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.6) 40%, transparent 50%),
++        radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.55) 40%, transparent 50%),
++        radial-gradient(1.6px 1.6px at 70% 70%, rgba(139,92,246,0.7) 40%, transparent 50%),
++        radial-gradient(2px 2px at 35% 82%, rgba(34,211,238,0.65) 40%, transparent 50%),
++        radial-gradient(1.3px 1.3px at 90% 40%, rgba(236,72,153,0.7) 40%, transparent 50%);
++      animation: drift 20s linear infinite;
++      z-index: -2;
++    }
++
++    .stars::before { animation-duration: 28s; opacity: 0.45; }
++    .stars::after { animation-duration: 36s; opacity: 0.3; }
++
++    @keyframes drift {
++      from { transform: translateY(0); }
++      to { transform: translateY(-60px); }
++    }
++
++    .container {
++      width: min(1080px, 92vw);
++      margin: 0 auto;
++      padding: 1.25rem 0 3.5rem;
++    }
++
++    .topbar {
++      display: flex;
++      justify-content: space-between;
++      align-items: center;
++      gap: 1rem;
++      margin-bottom: 2rem;
++      position: sticky;
++      top: 1rem;
++      z-index: 4;
++      backdrop-filter: blur(14px);
++      background: rgba(8, 11, 25, 0.58);
++      border: 1px solid rgba(255,255,255,0.08);
++      padding: 0.85rem 1.1rem;
++      border-radius: 14px;
++    }
++
++    .brand {
++      font-family: 'Orbitron', sans-serif;
++      font-weight: 900;
++      letter-spacing: 0.08em;
++      text-transform: uppercase;
++      font-size: 1rem;
++      color: #fff;
++      text-shadow: 0 0 16px rgba(34,211,238,0.45);
++    }
++
++    .pill {
++      font-size: 0.78rem;
++      color: #d6fdf4;
++      border: 1px solid rgba(52, 211, 153, 0.5);
++      border-radius: 999px;
++      padding: 0.38rem 0.72rem;
++      background: rgba(52, 211, 153, 0.14);
++    }
++
++    .hero {
++      display: grid;
++      gap: 1.25rem;
++      grid-template-columns: 1.1fr 0.9fr;
++      align-items: stretch;
++      margin-bottom: 1.5rem;
++    }
++
++    .glass {
++      background: var(--panel);
++      border: 1px solid var(--panel-border);
++      box-shadow: var(--glow);
++      border-radius: 22px;
++      backdrop-filter: blur(12px);
++    }
++
++    .hero-main {
++      padding: 2rem;
++    }
++
++    .kicker {
++      display: inline-block;
++      font-size: 0.78rem;
++      letter-spacing: 0.08em;
++      text-transform: uppercase;
++      color: #c4b5fd;
++      margin-bottom: 0.8rem;
++    }
++
++    h1 {
++      margin: 0;
++      font-family: 'Orbitron', sans-serif;
++      font-size: clamp(2rem, 4.5vw, 3.9rem);
++      line-height: 1.04;
++      letter-spacing: 0.02em;
++      text-shadow: 0 0 20px rgba(139,92,246,0.42);
++    }
++
++    .accent {
++      color: var(--cyan);
++      text-shadow: 0 0 18px rgba(34,211,238,0.45);
++    }
++
++    .lead {
++      margin: 1rem 0 1.35rem;
++      color: var(--muted);
++      line-height: 1.65;
++      max-width: 60ch;
++    }
+ 
++    .actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
++
++    .btn {
++      display: inline-block;
++      padding: 0.7rem 1rem;
++      border-radius: 12px;
++      font-weight: 700;
++      text-decoration: none;
++      font-size: 0.92rem;
++      transition: transform .2s ease, box-shadow .2s ease;
++    }
++
++    .btn:hover { transform: translateY(-2px); }
++
++    .btn-primary {
++      color: #09101d;
++      background: linear-gradient(90deg, var(--cyan), #8ef1ff);
++      box-shadow: 0 0 16px rgba(34,211,238,0.4);
++    }
++
++    .btn-secondary {
++      color: #ffe7ff;
++      border: 1px solid rgba(236,72,153,0.5);
++      background: rgba(236,72,153,0.18);
++    }
++
++    .hero-side {
++      padding: 1.4rem;
++      display: grid;
++      gap: 0.85rem;
++      align-content: start;
++    }
++
++    .stat {
++      border: 1px solid rgba(255,255,255,0.1);
++      border-radius: 14px;
++      padding: 0.8rem 0.9rem;
++      background: rgba(255,255,255,0.03);
++    }
++
++    .stat strong {
++      display: block;
++      font-family: 'Orbitron', sans-serif;
++      font-size: 1.35rem;
++      color: #fff;
++    }
++
++    .stat span { color: var(--muted); font-size: 0.85rem; }
++
++    .grid {
++      display: grid;
++      gap: 1rem;
++      grid-template-columns: repeat(3, minmax(0, 1fr));
++      margin: 1rem 0;
++    }
++
++    .card {
++      padding: 1.05rem;
++      border-radius: 16px;
++      background: rgba(10, 15, 30, 0.62);
++      border: 1px solid rgba(255,255,255,0.09);
++    }
++
++    .card h3 {
++      margin: 0 0 0.5rem;
++      font-size: 1rem;
++      color: #fafaff;
++    }
++
++    .card p {
++      margin: 0;
++      color: var(--muted);
++      line-height: 1.5;
++      font-size: 0.9rem;
++    }
++
++    .footer-note {
++      margin-top: 1.2rem;
++      text-align: center;
++      color: #8f97be;
++      font-size: 0.82rem;
++    }
++
++    @media (max-width: 920px) {
++      .hero { grid-template-columns: 1fr; }
++      .grid { grid-template-columns: 1fr; }
++      .topbar { position: static; }
++    }
++  </style>
++</head>
+ <body>
++  <div class="stars" aria-hidden="true"></div>
++
++  <main class="container">
++    <header class="topbar">
++      <div class="brand">CaspianRP</div>
++      <div class="pill">Now in Development</div>
++    </header>
++
++    <section class="hero">
++      <article class="hero-main glass">
++        <span class="kicker">Official Roblox Roleplay Project</span>
++        <h1>Build your <span class="accent">story</span> in the city that never sleeps.</h1>
++        <p class="lead">
++          CaspianRP blends cinematic world design, serious roleplay, and community-driven lore into one immersive Roblox universe.
++          Choose your path, shape the economy, and leave your mark on every district.
++        </p>
++        <div class="actions">
++          <a class="btn btn-primary" href="#" aria-label="Play CaspianRP on Roblox">Play on Roblox</a>
++          <a class="btn btn-secondary" href="#" aria-label="Join CaspianRP community">Join the Community</a>
++        </div>
++      </article>
++
++      <aside class="hero-side glass" aria-label="Project highlights">
++        <div class="stat"><strong>24/7</strong><span>Live server ambitions</span></div>
++        <div class="stat"><strong>100+</strong><span>Custom roleplay systems planned</span></div>
++        <div class="stat"><strong>∞</strong><span>Stories written by players</span></div>
++      </aside>
++    </section>
+ 
+-<div class="logo">
+-    <span>C</span>
+-    <span>a</span>
+-    <span>s</span>
+-    <span>p</span>
+-    <span>i</span>
+-    <span>a</span>
+-    <span>n</span>
+-    <span>R</span>
+-    <span>P</span>
+-</div>
++    <section class="grid" aria-label="Core features">
++      <article class="card glass">
++        <h3>Dynamic Economy</h3>
++        <p>Run businesses, build careers, and trade in a player-shaped market with real consequences.</p>
++      </article>
++      <article class="card glass">
++        <h3>Faction Identity</h3>
++        <p>Form crews, departments, and families with custom uniforms, territories, and progression.</p>
++      </article>
++      <article class="card glass">
++        <h3>Cinematic World</h3>
++        <p>Neon streets, weather-driven ambience, and district-based events that feel alive day and night.</p>
++      </article>
++    </section>
+ 
++    <p class="footer-note">Crafted for GitHub Pages • CaspianRP © 2026</p>
++  </main>
+ </body>
+ </html>
+ 
+EOF
+)
